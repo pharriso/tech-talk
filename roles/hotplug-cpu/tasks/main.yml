@@ -14,3 +14,11 @@
     name: "{{ vm_name }}"
     cpu_cores: "{{ cpu_cores }}"
   delegate_to: "{{ rhv_man }}"
+
+- name: Send confirmation message via telegram
+  telegram:
+    token: "{{ token }}"
+    chat_id: "{{ chat_id }}"
+    msg: "Changed cpu core count to {{ cpu_cores }} on VM {{ vm_name }}"
+  delegate_to: localhost
+  
