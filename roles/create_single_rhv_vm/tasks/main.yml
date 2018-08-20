@@ -24,7 +24,7 @@
       custom_script: |
         runcmd:
           - sleep 60
-          - curl -k --data "host_config_key=d9892533355b98f58001c415b22fdab5" https://ansible-tower.demolab.local:443/api/v2/job_templates/13/callback
+          - curl -k --data "host_config_key=d9892533355b98f58001c415b22fdab5" https://ansible-tower.demolab.local:443/api/v2/job_templates/13/callback/
         ssh_pwauth: True
         timezone: "Europe/London"
       user_name: root
