@@ -12,6 +12,11 @@
     org_id: techtalk
     force_register: yes
 
+- name: Install katello-host-tools
+  yum:
+    name: katello-host-tools
+    state: installed
+
 - name: Install IPA Client
   yum:
     name: ipa-client
