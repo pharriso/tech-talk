@@ -1,0 +1,9 @@
+---
+# tasks file for mariadb
+- name: Install the mariadb package
+  yum:
+    name: mariadb-server
+    state: latest
+  become: yes
+  notify: restart mariadb
+

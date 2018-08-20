@@ -1,0 +1,9 @@
+---
+- name: Deploy the application on the nodes.
+  hosts:  all
+  roles:
+    - { role: node_deploy, become: yes }
+    - { role: node_foreman_content, become: yes }
+
+
+
