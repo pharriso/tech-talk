@@ -1,5 +1,8 @@
 ---
 # tasks file for node_deploy
+  - name: "make sure firewalld is running"
+    include: start_firewall.yaml
+
   - name: "Open the firewall ports for the specific application deployment"
     include: open_http_firewall.yaml
 
