@@ -12,3 +12,4 @@
   ovirt_vms:
     name: "{{ vm_name }}"
     cpu_cores: "{{ cpu_cores }}"
+  delegate_to: "{{ rhv_man }}"
