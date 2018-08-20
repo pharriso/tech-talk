@@ -19,6 +19,6 @@
   telegram:
     token: "{{ token }}"
     chat_id: "{{ chat_id }}"
-    msg: "Changed cpu core count to {{ cpu_cores }} on VM {{ vm_name }}"
+    msg: "Message from Ansible Tower - Changed cpu core count to {{ cpu_cores }} on VM {{ vm_name }}."
   delegate_to: localhost
   
