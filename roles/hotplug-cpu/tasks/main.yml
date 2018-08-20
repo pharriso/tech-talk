@@ -10,6 +10,7 @@
 
 - name: Hotplug CPU
   ovirt_vms:
+    auth: "{{ ovirt_auth }}"
     name: "{{ vm_name }}"
     cpu_cores: "{{ cpu_cores }}"
   delegate_to: "{{ rhv_man }}"
