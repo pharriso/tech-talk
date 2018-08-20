@@ -1,0 +1,30 @@
+---
+
+- name: Patch certain packages for demo purposes
+  yum:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - kernel
+    - dhclient
+
+- name: Downgrade sudo for demo purposes
+  yum:
+    name: sudo-1.8.6p7-21.el7_3
+    state: present
+
+- name: Reboot server
+  shell: sleep 2 && reboot
+  async: 1
+  poll: 0
+  ignore_errors: true
+  when: patches | changed
+
+- name: Wait for server to come back
+  wait_for: 
+    host: "{{ inventory_hostname }}"
+    delay: 10 
+    timeout: 300 
+    port: 22
+  delegate_to: localhost
+  when: patches | changed
