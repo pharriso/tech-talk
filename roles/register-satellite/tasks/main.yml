@@ -1,0 +1,23 @@
+---
+
+- name: Install Satellite katello certificate
+  yum:
+    name: http://{{ sat_server }}/pub/katello-ca-consumer-latest.noarch.rpm
+    state: installed
+
+- name: Register to Satellite
+  redhat_subscription:
+    state: present
+    activationkey: "{{ sat_ak }}"
+    org_id: techtalk
+    force_register: yes
+
+- name: Install IPA Client
+  yum:
+    name: ipa-client
+    state: installed
+
+- name: Add client to IPA
+  shell: ipa-client-install --mkhomedir -U -w {{ ipa_pass }} -p {{ ipa_user }}
+  register: ipa_install
+  failed_when: "ipa_install.rc != 0 and ipa_install.rc != 3"
