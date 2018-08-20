@@ -12,13 +12,7 @@
 <body id="home">
 
     <h1>Cherry picked puppet and Foreman ENC data</h1>
-    <pre>
-        Installed Puppet version  according to foreman {{ foreman_facts.puppetversion }}
-        Installed Augeas according to foreman {{ foreman_facts.augeasversion }}
-        Foreman host parameters (provided via ENC {{ foreman_params }})
-        Foreman ENC data claims we were built with the "{{  foreman_params.kt_activation_keys }}" activation key
-        DMI Chassis type (dmi::chassis::type) "{{  foreman_facts['dmi::chassis::type'] }}"
-    </pre>
+
 
     <h1>Foreman Facts (Lots of)</h1>
     <pre>
@@ -26,11 +20,6 @@
         foreman_facts.{{ ffact}} = {{ fval}}
         {% endfor %}
         </pre>
-
-    <h1>Foreman data about puppet host signed with certname "{{ foreman.certname }}" </h1>
-    <pre>
-        {{ foreman | to_yaml }}
-    </pre>
 
 </body>
 </html>
