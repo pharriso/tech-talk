@@ -19,7 +19,7 @@
   async: 1
   poll: 0
   ignore_errors: true
-  when: patches | changed
+  when: patches is changed
 
 - name: Wait for server to come back
   wait_for: 
@@ -28,4 +28,4 @@
     timeout: 300 
     port: 22
   delegate_to: localhost
-  when: patches | changed
+  when: patches is changed
