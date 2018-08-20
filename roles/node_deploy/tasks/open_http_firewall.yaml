@@ -1,5 +1,10 @@
 ---
-
+  - name: Install Ansible Python 2 Dependencies
+    yum:
+      name: python-firewall
+      state: latest
+    become: yes
+    
   - name: Open HTTP firewall port 80
     firewalld:
       service: http
