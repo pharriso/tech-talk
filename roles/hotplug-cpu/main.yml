@@ -1,0 +1,14 @@
+---
+
+- name: Auth to RHV
+  ovirt_auth:
+    url: "{{ auth_url }}"
+    username: "{{ username }}"
+    password: "{{ password }}"
+    insecure: true
+  delegate_to: "{{ rhv_man }}"
+
+- name: Hotplug CPU
+  ovirt_vms:
+    name: "{{ vm_name }}"
+    cpu_cores: "{{ cpu_cores }}"
