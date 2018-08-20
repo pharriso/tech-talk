@@ -1,0 +1,7 @@
+- name: Stop and disable firewalld.
+  service:
+    name: firewalld
+    state: running
+    enabled: True
+  become: yes
+    
