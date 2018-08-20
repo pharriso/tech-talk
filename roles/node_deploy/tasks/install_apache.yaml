@@ -1,4 +1,9 @@
 ---
+  - name: Install Ansible Python 2 Dependencies
+    yum:
+      name: python-firewall
+      state: latest
+  
   - name: Install apache
     yum: name=httpd
     become: yes
