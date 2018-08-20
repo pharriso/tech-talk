@@ -7,6 +7,7 @@
   with_items:
     - kernel
     - dhclient
+  register: patches
 
 - name: Downgrade sudo for demo purposes
   yum:
