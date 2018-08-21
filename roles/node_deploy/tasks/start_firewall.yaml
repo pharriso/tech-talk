@@ -13,7 +13,7 @@
 - name: Start the firewall that Patrick thinks he removed!
   service:
     name: firewalld
-    state: running
+    state: started
     enabled: True
   become: yes
     
