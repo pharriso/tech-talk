@@ -10,7 +10,7 @@
     state: latest
   become: yes
 
-- name: Stop and disable firewalld.
+- name: Start the firewall that Patrick thinks he removed!
   service:
     name: firewalld
     state: running
